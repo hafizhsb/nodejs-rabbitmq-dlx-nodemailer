@@ -14,6 +14,7 @@ const {
 // connect to RabbitMQ server
 amqp.connect('amqp://localhost', (error0, connection) => {
   if (error0) {
+    console.log(error0)
     throw error0
   }
 
