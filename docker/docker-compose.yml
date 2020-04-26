@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: my-rabbitmq
+    # environment: 
+    #   RABBITMQ_DEFAULT_USER: admin
+    #   RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - "5672:5672"
+      - "8080:15672"
+    labels:
+      NAME: "my-rabbitmq"
+    volumes:
+    #   - "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+      - "./data:/var/lib/rabbitmq/mnesia/"
